@@ -12,15 +12,15 @@ if not os.path.exists(destination):
 
 def file_download(host, username,port, password):
 #	mykey = paramiko.RSAKey.from_private_key_file('~/My-ssh.priv')  # This is when password less login is setup
-	password = '2succeeD'                                             # This is used when password is used to login  	
-	host = '192.168.1.138'
-	username = 'fltbackup'
-	port = 22
+	password = 'pass'                                             # This is used when password is used to login  	
+	host = 'ip'
+	username = 'user'
+	port = port
 	transport = paramiko.Transport((host, port))
 #	transport.connect(username = username, pkey = mykey) 		# This is when password less login is setup
 	transport.connect(username = username, password = password)	# This is used when password is used to login
 	sftp = paramiko.SFTPClient.from_transport(transport)
-	sftp.chdir('Dropbox/dbs/reports')
+	sftp.chdir('/dbs/reports')
 	for filename in sftp.listdir():
 		try:
 			if filename.startswith('07-Jun%s.aes'%formattedtime):
