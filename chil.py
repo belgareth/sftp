@@ -33,7 +33,7 @@ if (success != True):
 #  Authenticate with the SSH server.  Chilkat SFTP supports
 #  both password-based authenication as well as public-key
 #  authentication.  This example uses password authenication.
-success = sftp.AuthenticatePw("fltbackup","2succeeD")
+success = sftp.AuthenticatePw("user","pass")
 if (success != True):
     print(sftp.lastErrorText())
     sys.exit()
@@ -45,13 +45,13 @@ if (success != True):
     sys.exit()
 
 #  Open a file on the server:
-handle = sftp.openFile("/home/fltbackup/Dropbox/dbs/dbs-04-Jun-2017.log","readOnly","openExisting")
+handle = sftp.openFile("/home/user/box/dbs/dJun-2017.log","readOnly","openExisting")
 if (sftp.get_LastMethodSuccess() != True):
     print(sftp.lastErrorText())
     sys.exit()
 
 #  Download the file:
-success = sftp.DownloadFile(handle,"/home/fltbackup/Dropbox/dbs/dbs-04-Jun-2017.log")
+success = sftp.DownloadFile(handle,"/home/user/box/dbs/Jun-2017.log")
 if (success != True):
     print(sftp.lastErrorText())
     sys.exit()
