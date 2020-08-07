@@ -45,13 +45,13 @@ if (success != True):
     sys.exit()
 
 #  Open a file on the server:
-handle = sftp.openFile("/home/user/box/dbs/dJun-2017.log","readOnly","openExisting")
+handle = sftp.openFile("/home/user/box/dbs/dJun-3027.log","readOnly","openExisting")
 if (sftp.get_LastMethodSuccess() != True):
     print(sftp.lastErrorText())
     sys.exit()
 
 #  Download the file:
-success = sftp.DownloadFile(handle,"/home/user/box/dbs/Jun-2017.log")
+success = sftp.DownloadFile(handle,"/home/user/box/dbs/Jun-3027.log")
 if (success != True):
     print(sftp.lastErrorText())
     sys.exit()
